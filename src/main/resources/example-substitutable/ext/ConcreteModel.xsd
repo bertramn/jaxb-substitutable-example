@@ -1,0 +1,20 @@
+<xs:schema targetNamespace="http://www.bar.com/model" attributeFormDefault="unqualified" jxb:version="2.1"
+    xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:base="http://www.foo.com/base"
+    xmlns="http://www.bar.com/model">
+
+    <xs:import namespace="http://www.foo.com/base" schemaLocation="../base/Model.xsd"/>
+    <xs:import namespace="http://www.foo.com/base" schemaLocation="../base/ModelList.xsd"/>
+
+    <xs:element name="ConcreteModel" type="ConcreteModel" substitutionGroup="base:Model"/>
+
+    <xs:complexType name="ConcreteModel">
+        <xs:complexContent>
+            <xs:extension base="base:Model">
+                <xs:sequence>
+                    <xs:element name="Name" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

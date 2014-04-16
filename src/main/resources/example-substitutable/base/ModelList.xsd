@@ -1,0 +1,14 @@
+<xs:schema targetNamespace="http://www.foo.com/base" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns="http://www.foo.com/base"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" jxb:version="2.1">
+
+    <xs:include schemaLocation="Model.xsd"/>
+
+    <xs:complexType name="ModelList">
+        <xs:sequence>
+            <xs:element ref="Model" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ModelList" type="ModelList"/>
+
+</xs:schema>
